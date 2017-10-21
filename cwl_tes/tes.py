@@ -51,7 +51,7 @@ class TESPipelineTool(CommandLineTool):
         self.pipeline = pipeline
         self.fs_access = fs_access
 
-    def makeJobRunner(self, use_container=True):
+    def makeJobRunner(self, use_container=True, **kwargs):
         return TESPipelineJob(self.spec, self.pipeline, self.fs_access)
 
     def makePathMapper(self, reffiles, stagedir, **kwargs):
